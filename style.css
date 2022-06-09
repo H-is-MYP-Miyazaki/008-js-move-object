@@ -1,3 +1,6 @@
+body {
+  
+}
 .character{
   width: 100px;
   height: 100px;
@@ -11,6 +14,20 @@
 .jump{
   animation: jump 1000ms forwards;
 }
+.go-right{
+  animation: goRight 1000ms forwards;
+}
+
+
+@keyframes  goRight {
+  50%{
+    left: 60%;
+  }
+  100%{
+    /* bottom: 20%; */
+    transform: rotate(-360deg);
+  }
+}
 
 
 @keyframes  jump {
@@ -21,4 +38,34 @@
       bottom: 20%;
       transform: rotate(-360deg);
     }
+}
+
+.enemy{
+  position: absolute;
+  top: 60%;
+  left: 100%;
+  background:red;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px green;
+  animation: enemyAnim 4s linear infinite;
+}
+
+@keyframes enemyAnim {
+  25%{
+    width: 200px;
+  }
+  50%{
+    top: 50%;
+    opacity: .5;
+    width: 100px;
+  }
+  75%{
+    width: 300px;
+    transform:rotate(90deg);
+  }
+  100%{
+    left: -20%;
+  }
 }
